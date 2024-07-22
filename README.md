@@ -1,63 +1,41 @@
-# 🚀 Express TypeScript Boilerplate 2024
+```mermaid
+flowchart TD
+    A[User Uploads CSV File] --> B[Receive File with Express]
+    B --> C[File Validation (MIME Type Check)]
+    C -->|Valid CSV| D[Save File to Temporary Location]
+    C -->|Invalid File| E[Return Error Response]
 
-[![Build](https://github.com/edwinhern/express-typescript-2024/actions/workflows/build.yml/badge.svg)](https://github.com/edwinhern/express-typescript-2024/actions/workflows/build.yml)
-[![Test](https://github.com/edwinhern/express-typescript-2024/actions/workflows/test.yml/badge.svg)](https://github.com/edwinhern/express-typescript-2024/actions/workflows/test.yml)
-[![Code Quality](https://github.com/edwinhern/express-typescript-2024/actions/workflows/code-quality.yml/badge.svg)](https://github.com/edwinhern/express-typescript-2024/actions/workflows/code-quality.yml)
-[![Docker Image CI](https://github.com/edwinhern/express-typescript-2024/actions/workflows/docker-image.yml/badge.svg)](https://github.com/edwinhern/express-typescript-2024/actions/workflows/docker-image.yml)
+    D --> F[Read and Parse CSV]
+    F --> G[Extract Image URLs]
+    
+    G --> H[Download Images]
+    H --> I[Process Images]
+    I --> J[Save Images to Output Folder]
+    I --> K[Store Image Data in Database]
+    
+    J --> L[Generate Output CSV]
+    K --> L[Generate Output CSV]
 
-## 🌟 Introduction
+    L --> M[Send Success Response]
+    M --> N[Provide Download Link for Output CSV]
+    
+    E --> N[Provide Error Response]
 
-Welcome to the Express TypeScript Boilerplate 2024 – a streamlined, efficient, and scalable foundation for building powerful backend services. This boilerplate merges modern tools and practices in Express.js and TypeScript, enhancing productivity, code quality, and performance.
 
-## 💡 Motivation and Intentions
+### Explanation:
 
-Developed to streamline backend development, this boilerplate is your solution for:
+1. **User Uploads CSV File**: Initiates the file upload process.
+2. **Receive File with Express**: The file is received by the Express server.
+3. **File Validation (MIME Type Check)**: Validates that the file is a CSV.
+4. **Save File to Temporary Location**: Saves the uploaded file temporarily.
+5. **Read and Parse CSV**: Parses the CSV file to extract data.
+6. **Extract Image URLs**: Extracts image URLs from the CSV data.
+7. **Download Images**: Downloads the images from the extracted URLs.
+8. **Process Images**: Processes the downloaded images (e.g., resize).
+9. **Save Images to Output Folder**: Saves the processed images to the output folder.
+10. **Store Image Data in Database**: Stores image metadata in the database.
+11. **Generate Output CSV**: Creates a new CSV file with the processed data.
+12. **Send Success Response**: Sends a success response with a download link for the output CSV.
+13. **Provide Error Response**: Provides an error response if validation fails.
 
-- ✨ Reducing setup time for new projects.
-- 📊 Ensuring code consistency and quality.
-- ⚡ Facilitating rapid development with cutting-edge tools.
-- 🛡️ Encouraging best practices in security, testing, and performance.
-
-## 🚀 Features
-
-- 📁 Modular Structure: Organized by feature for easy navigation and scalability.
-- 💨 Faster Execution with tsx: Rapid TypeScript execution with esbuild, complemented by tsc for type checking.
-- 🌐 Stable Node Environment: Latest LTS Node version in .nvmrc.
-- 🔧 Simplified Environment Variables with Envalid: Centralized and easy-to-manage configuration.
-- 🔗 Path Aliases: Cleaner code with shortcut imports.
-- 🔄 Renovate Integration: Automatic updates for secure and up-to-date dependencies.
-- 🔒 Security: Helmet for HTTP header security and CORS setup.
-- 📊 Logging: Efficient logging with pino-http.
-- 🧪 Comprehensive Testing: Robust setup with Vitest and Supertest.
-- 🔑 Code Quality Assurance: Husky and lint-staged for consistent quality.
-- ✅ Unified Code Style: Biomejs for a consistent coding standard.
-- 📃 API Response Standardization: ServiceResponse class for consistent API responses.
-- 🐳 Docker Support: Ready for containerization and deployment.
-- 📝 Input Validation with Zod: Strongly typed request validation using Zod.
-- 🧩 API Spec Generation: Automated OpenAPI specification generation from Zod schemas to ensure up-to-date and accurate API documentation.
-
-## 🛠️ Getting Started
-
-### Step 1: 🚀 Initial Setup
-
-- Clone the repository: `git clone https://github.com/edwinhern/express-typescript-2024.git`
-- Navigate: `cd express-typescript-2024`
-- Install dependencies: `npm ci`
-
-### Step 2: ⚙️ Environment Configuration
-
-- Create `.env`: Copy `.env.template` to `.env`
-- Update `.env`: Fill in necessary environment variables
-
-### Step 3: 🏃‍♂️ Running the Project
-
-- Development Mode: `npm run dev`
-- Building: `npm run build`
-- Production Mode: Set `.env` to `NODE_ENV="production"` then `npm run build && npm run start`
-
-## 🤝 Feedback and Contributions
-
-We'd love to hear your feedback and suggestions for further improvements. Feel free to contribute and join us in making backend development cleaner and faster!
-
-🎉 Happy coding!
-# spinner
+This Mermaid diagram will help visualize the architecture and workflow of your file upload and processing system.

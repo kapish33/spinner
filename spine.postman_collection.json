@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "ffc55cea-4db8-4aee-9ef4-d65249400008",
+		"name": "spine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22573837",
+		"_collection_link": "https://lively-resonance-753053.postman.co/workspace/New-Team-Workspace~c7528e94-c813-4331-815e-e1bc36e00f92/collection/22573837-ffc55cea-4db8-4aee-9ef4-d65249400008?action=share&source=collection_link&creator=22573837"
+	},
+	"item": [
+		{
+			"name": "Get by Reference Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}csv/bf982b44-f7b2-4681-b6fa-c34d05a04555",
+					"host": [
+						"{{local}}csv"
+					],
+					"path": [
+						"bf982b44-f7b2-4681-b6fa-c34d05a04555"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/kapish/Downloads/Untitled spreadsheet - Sheet1.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}csv/upload",
+					"host": [
+						"{{local}}csv"
+					],
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
